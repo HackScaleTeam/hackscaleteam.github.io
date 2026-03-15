@@ -44,25 +44,25 @@ hr {
   opacity: 0.3;
 }
 
-/* Arabic RTL support */
-html:lang(ar), body:lang(ar) {
+/* Force Arabic RTL layout */
+body {
   direction: rtl;
   text-align: right;
 }
 
-/* Fix mixed Arabic + English text */
-p, li {
+/* Paragraphs and lists */
+p, li, h1, h2, h3, h4 {
   direction: rtl;
   text-align: right;
 }
 
-/* Keep code blocks and commands LTR */
-code, pre, pre code {
+/* Keep code blocks LTR */
+pre, code {
   direction: ltr;
   text-align: left;
 }
 
-/* Inline code inside Arabic text */
+/* Inline English words inside Arabic */
 code {
   unicode-bidi: embed;
 }
