@@ -43,3 +43,26 @@ hr {
   font-size: 2.5em;
   opacity: 0.3;
 }
+
+/* Arabic RTL support */
+html:lang(ar), body:lang(ar) {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Fix mixed Arabic + English text */
+p, li {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Keep code blocks and commands LTR */
+code, pre, pre code {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Inline code inside Arabic text */
+code {
+  unicode-bidi: embed;
+}
