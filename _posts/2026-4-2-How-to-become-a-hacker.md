@@ -1,10 +1,4 @@
----
-layout: post
-title: "How to Become a Hacker"
-date: 2026-04-04
-categories: [Cybersecurity, Hacking, Learning]
-author: "Samer Wleed"
----
+
 ![banner](/assets/how-to-become-ethical-hacker-banner.png)
 
 أكثر سؤال يصلني دائماً هو:  
