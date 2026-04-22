@@ -20,11 +20,11 @@ Enough with analogies; the technical definition for a network is a digital telec
 A client is a device that accesses a service made available by a server.
 A server is a device that provides functions or services for clients.
 So the internet is just a giant network that is made of everyone’s nodes, one big network carrying everyone on board. The first version of the internet was built in the 1960s through the ARPANET project, which was funded by the United States Department of Defense. That was the first documented network in action but the internet we know today was invented in 1989 then the world wide web (www) was invented by Tim Berners-Lee.
-
+---
 <p align="center">
   <img src="/assets/network_diagram.jpg" width="800">
 </p>
-
+---
 Devices that will need to communicate over the internet will need two things: a name and a fingerprint. The digital device’s name and fingerprint are known as:
 •	IP address
 •	MAC address
