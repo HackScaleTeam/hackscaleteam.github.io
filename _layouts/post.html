@@ -34,7 +34,9 @@ dir: rtl
     {% include sharelinks.html %}
   </div>
 
-  <div class="post-content e-content" itemprop="articleBody">
+  <div class="post-content e-content" itemprop="articleBody"
+     dir="{% if page.lang == 'ar' %}rtl{% else %}ltr{% endif %}"
+     style="text-align: {% if page.lang == 'ar' %}right{% else %}left{% endif %};">
     {{ content }}
     {% include navlinks.html %}
   </div>
