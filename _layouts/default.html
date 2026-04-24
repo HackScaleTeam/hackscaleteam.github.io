@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang }}" 
+      dir="{% if page.lang == 'ar' %}rtl{% else %}ltr{% endif %}">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ page.title }}</title>
+
+    <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  </head>
+
+  <body>
+
+    {{ content }}
+
+  </body>
+
+</html>
