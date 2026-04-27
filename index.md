@@ -6,3 +6,13 @@ No fluff. No theory overload.
 Only hands-on knowledge, tested methods, and a true hacker mindset.
 
 Learn by doing. Think like an attacker. Scale your skills.
+
+<h2>Posts</h2>
+
+{% for post in site.posts %}
+  {% unless post.category == "networking-series" %}
+    <p>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </p>
+  {% endunless %}
+{% endfor %}
