@@ -3,6 +3,7 @@ layout: post
 title: "Networking Path Series"
 date: 2026-04-22
 lang: en
+category: networking-series
 ---
 # Networking Path Series — Computer Network, IP, and MAC address.
 
