@@ -1,6 +1,6 @@
 # SQL Injection (SQLi) Cheat Sheet
 
-## Professional Practical Guide for Learning & Authorized Testing
+## Practical Guide for Learning
 
 > This cheat sheet is intended for education, labs, CTFs, and authorized security testing only.
 
@@ -543,7 +543,7 @@ AND 1=2
 
 # Final Notes
 
-Professional SQL Injection testing is not about memorizing payloads only.
+SQL Injection testing is not about memorizing payloads only.
 
 A strong penetration tester understands:
 
