@@ -22,7 +22,7 @@
 12. SQLi in Cookies & Headers
 13. Common WAF Bypass Concepts
 14. Secure Coding & Prevention
-15. Professional Testing Methodology
+15. Testing Methodology
 16. Useful Tools
 17. Quick Payload Reference
 
