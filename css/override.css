@@ -43,26 +43,3 @@ hr {
   font-size: 2.5em;
   opacity: 0.3;
 }
-
-/* Force Arabic RTL layout */
-body {
-  direction: rtl;
-  text-align: right;
-}
-
-/* Paragraphs and lists */
-p, li, h1, h2, h3, h4 {
-  direction: rtl;
-  text-align: right;
-}
-
-/* Keep code blocks LTR */
-pre, code {
-  direction: ltr;
-  text-align: left;
-}
-
-/* Inline English words inside Arabic */
-code {
-  unicode-bidi: embed;
-}
